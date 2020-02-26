@@ -1,7 +1,7 @@
 const express = require('express');
-const hbs = require('hbs');
 const app = express();
-
+const hbs = require('hbs');
+const port = process.env.port
 const geoCoding = require('./utils/geoCoding');
 const forecast = require('./utils/forecast');
 
@@ -12,8 +12,8 @@ const public = path.join(__dirname, '../public/');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
-app.set('views', path.join(viewsPath))
 app.set('view engine', 'hbs')
+app.set('views', path.join(viewsPath))
 
 hbs.registerPartials(partialsPath)
 
@@ -105,6 +105,6 @@ app.get('*', (req, res) => {
         error: 'Page not found.'
     })
 })
-app.listen(3001, () => {
+app.listen(port, () => {
     console.log('App running at port 3001')
 })
