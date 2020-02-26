@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const hbs = require('hbs');
-const port = process.env.port
+const port = process.env.port || 3001
 const geoCoding = require('./utils/geoCoding');
 const forecast = require('./utils/forecast');
 
@@ -105,6 +105,7 @@ app.get('*', (req, res) => {
         error: 'Page not found.'
     })
 })
+
 app.listen(port, () => {
-    console.log('App running at port 3001')
+    console.log(`App running at port ${port}`)
 })
