@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const server_port = process.env.PORT || 3001
-const server_host = process.env.YOUR_HOST || '127.0.0.1';
 const geoCoding = require('./utils/geoCoding');
 const forecast = require('./utils/forecast');
 
@@ -107,6 +106,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(server_port, server_host, () => {
+app.listen(server_port, () => {
     console.log(`App running at port ${server_port}`)
 })
