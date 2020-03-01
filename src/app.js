@@ -27,20 +27,20 @@ app.get('', (req, res) => {
     })
 })
 
-app.get('/about', (req, res) => {
-    res.render('about', {
-        title: 'About Page',
-        name: 'Jordan Lyn'
-    })
-})
+// app.get('/about', (req, res) => {
+//     res.render('about', {
+//         title: 'About Page',
+//         name: 'Jordan Lyn'
+//     })
+// })
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'Help!!!',
-        msg: 'If you need help, call 999',
-        name: 'Jordan Lyn'
-    })
-})
+// app.get('/help', (req, res) => {
+//     res.render('help', {
+//         title: 'Help!!!',
+//         msg: 'If you need help, call 999',
+//         name: 'Jordan Lyn'
+//     })
+// })
 
 app.get('/weather', (req, res) => {
     const address = req.query.address;
@@ -89,13 +89,13 @@ app.get('/products', (req, res) => {
 })
 
 // if nothing matches on help search route
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        name: 'Jordan',
-        error: 'Help article not found'
-    })
-})
+// app.get('/help/*', (req, res) => {
+//     res.render('404', {
+//         title: '404',
+//         name: 'Jordan',
+//         error: 'Help article not found'
+//     })
+// })
 
 //404
 app.get('*', (req, res) => {
