@@ -10,7 +10,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.err) {
             callback('Unable to make request, check URL input', undefined)
         } else {
-            callback(undefined, `It is currently ${body.currently.temperature} degrees celcius, with a ${body.currently.precipProbability}% chance of rain. \n Temperature high: ${body.daily.data[0].temperatureHigh}, Temperature Low: ${body.daily.data.temperatureLow}`)
+            callback(undefined, `It is currently ${body.currently.temperature} degrees celcius, with a ${body.currently.precipProbability}% chance of rain. \n Temperature high: ${body.daily.data[0].temperatureHigh}, Temperature Low: ${body.daily.data[0].temperatureLow}`)
         }
     })
 }
